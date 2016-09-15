@@ -23,7 +23,7 @@ function updateTime()
 
     document.getElementById("hex").innerHTML = "#" + h + m + s;
     
-    document.getElementById("hex").style.fontFamily = "Courier New";
+    document.getElementById("hex").style.fontFamily = "Roboto";
     document.getElementById("hex").style.fontSize = 250 + "px";
     document.getElementById("hex").style.paddingTop = 19 + "vh";
 
