@@ -25,7 +25,7 @@ function updateTime()
     
     document.getElementById("hex").style.fontFamily = "Roboto";
     document.getElementById("hex").style.fontSize = 250 + "px";
-    document.getElementById("hex").style.paddingTop = 19 + "vh";
+    /*document.getElementById("hex").style.paddingTop = 19 + "vh";*/
 
     if (/([0-9A-F]{6}$)|([0-9A-F]{3}$)/i.test("Default"))
     {
