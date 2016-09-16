@@ -35,11 +35,6 @@ function updateTime()
         document.body.style.backgroundColor = "#" + h + m + s;
     }
 
-    var height = window.innerHeight;
-    height = (height/2)-125;
-    /*document.getElementById("hex").style.paddingTop = height + "px";*/
-
-
     setTimeout(function ()
     {
         updateTime();
