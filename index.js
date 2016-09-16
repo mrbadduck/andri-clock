@@ -36,7 +36,7 @@ function updateTime()
     }
 
     var height = window.innerHeight;
-    height = (height/2)-125;
+    height = (height/2)-100;
     document.getElementById("hex").style.paddingTop = height + "px";
 
 
