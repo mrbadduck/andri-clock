@@ -21,9 +21,7 @@
             text-align: center;
             width: 99%;
             color: #F1F1F1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            
         }
 
         /*noinspection CssOptimizeSimilarProperties*/
@@ -51,12 +49,20 @@
             -ms-user-select: none;
             user-select: none;
         }
+
+        main
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;    
+        }
     </style>
 </head>
 
 <body>
+<main>
 <script src="./index.js"></script>
 <p class="unselectable" id="hex"></p>
-
+</main>
 </body>
 </html>
