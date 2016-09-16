@@ -37,7 +37,7 @@ function updateTime()
 
     var height = window.innerHeight;
     height = (height/2)-125;
-    document.getElementById("hex").style.paddingTop = height + "px";
+    /*document.getElementById("hex").style.paddingTop = height + "px";*/
 
 
     setTimeout(function ()
