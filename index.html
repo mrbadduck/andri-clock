@@ -4,58 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Andri Clock</title>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:100' rel='stylesheet'
-          type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100" rel="stylesheet">
+
 
     <style>
-        body
-        {
-            text-align: center;
-            width: 100%;
-            color: #F1F1F1;
-            
+        body {
+            width: 99%;
         }
 
-        /*noinspection CssOptimizeSimilarProperties*/
-        #hex
-        {
-            /*noinspection CssNoGenericFontName*/
-            font-family: "Roboto Mono", monospace;
-            font-size: 0;
-            padding-top: 0;
-            display: block;
+        #hex {
+            text-align: center;
+            padding-top: 16vh;
+            font-family: "Roboto Mono", "Lucida Grande", sans-serif;
             margin-top: 0;
             margin-bottom: 0;
-            margin-left: 0;
-            margin-right: 0;
             text-transform: uppercase;
-            /*text-justify: distribute;*/
+            color: #F1F1F1;
+            font-size: 250px;
+            font-weight: 100;
+            letter-spacing: -.05em;
         }
 
-        .unselectable
-        {
+        .unselectable {
             -webkit-touch-callout: none;
             -webkit-user-select: none;
-            /*noinspection CssUnknownProperty*/
             -khtml-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
-        }
-
-        main
-        {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;    
         }
     </style>
 </head>
 
 <body>
     <main>
+        <p id="hex" class="unselectable"></p>
+
         <script src="./index.js"></script>
-        <p class="unselectable" id="hex"></p>
     </main>
 </body>
 
