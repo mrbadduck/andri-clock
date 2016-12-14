@@ -1,52 +1,34 @@
-function pad(n, width, z) {
-    z = z || '0';
-    n = n + '';
-    return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+function leftPad( n, width ) {
+    return n.length < width ?
+        new Array( width - n.length + 1 ).join( "0" ) + n :
+        n;
 }
 
 function hexvert24( i ) {
-    var scaled = Math.floor( i * ( 255 / 24 ) )
-    return pad( scaled.toString( 16 ), 2 );
+    var scaled = Math.floor( i * ( 255 / 24 ) );
+    return leftPad( scaled.toString( 16 ), 2 );
 }
 
 function hexvert60( i ) {
     var scaled = Math.floor( i * ( 255 / 60 ) );
-    return pad( scaled.toString( 16 ), 2 );
+    return leftPad( scaled.toString( 16 ), 2 );
 }
 
-function updateTime()
-{
-    var d = new Date();
-    var h = hexvert24(d.getHours());
-    var m = hexvert60(d.getMinutes());
-    var s = hexvert60(d.getSeconds());
+function getHexTime( d ) {
+    var h = hexvert24( d.getHours() );
+    var m = hexvert60( d.getMinutes() );
+    var s = hexvert60( d.getSeconds() );
 
-    document.getElementById("hex").innerHTML = "#" + h + m + s;
-    
-    document.getElementById("hex").style.fontFamily = "Roboto Mono";
-    document.getElementById("hex").style.fontSize = 250 + "px";
-    /*document.getElementById("hex").style.paddingTop = 19 + "vh";*/
-
-    if (/([0-9A-F]{6}$)|([0-9A-F]{3}$)/i.test("Default"))
-    {
-        document.body.style.backgroundColor = "#Default";
-    } else
-    {
-        document.body.style.backgroundColor = "#" + h + m + s;
-    }
-
-    var height = window.innerHeight;
-    height = (height/2)-165
-    document.getElementById("hex").style.paddingTop = height + "px";
-
-
-    setTimeout(function ()
-    {
-        updateTime();
-    }, 500);
+    return "#" + h + m + s;
 }
 
-document.body.onload = function ()
-{
-    updateTime();
+function updateTime() {
+    var hexTime = getHexTime( new Date() );
+
+    document.getElementById("hex").innerHTML = hexTime;
+    document.body.style.backgroundColor = hexTime;
+}
+
+document.body.onload = function() {
+    setInterval( updateTime, 500 )
 };
